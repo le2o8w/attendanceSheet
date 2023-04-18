@@ -1,0 +1,20 @@
+<article>
+    <h1>Feuille de présence</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>État</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tr *ngFor="let student of attendanceSheet.STUDENTS">
+            <td>
+                {{ student.FIRSTNAME }} {{ student.LASTNAME }}
+            </td>
+            <td>
+                <button (click)="togglePresenceState(student)">{{ student.presenceState | presenceState }}</button>
+            </td>
+        </tr>
+    </table>
+</article>
